@@ -71,7 +71,7 @@
 			</plugin>
 		
 		</plugins>
-		<finalName>GraphQL</finalName>
+		<finalName>ROOT</finalName>
 	</build>
 
 
