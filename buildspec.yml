@@ -8,9 +8,9 @@ phases:
   pre_build:
     commands:
       - echo Test started on `date`
-      - sh /scripts/testing.sh 9
       - aws ssm get-parameters --name "Sample" >> sample.txt 
       - cat sample.txt
+      - echo $Environment
   build:
     commands:
       - echo Build started on `date`
