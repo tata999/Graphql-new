@@ -1,9 +1,10 @@
 version: 0.2
 
+env :
 phases:
   install:
     commands:
-      # Upgrade AWS CLI to the latest version
+      # Upgrade AWS CLI to the latest version abcd ed
       - pip install --upgrade awscli
   pre_build:
     commands:
