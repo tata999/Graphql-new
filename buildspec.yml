@@ -15,6 +15,7 @@ phases:
       - echo Build started on `date`
       - aws ssm get-parameters --name "Sample2" --with-decryption >> sample2.txt 
       - cat sample2.txt
+      - echo $ENVIRONMENT
   post_build:
     commands:
       - echo Entering post_build phase...
