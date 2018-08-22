@@ -13,7 +13,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - aws ssm get-parameters --name "Sample" --with-decryption >> sample2.txt 
+      - aws ssm get-parameters --name "Sample2" --with-decryption >> sample2.txt 
       - cat sample2.txt
   post_build:
     commands:
