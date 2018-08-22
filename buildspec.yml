@@ -1,6 +1,9 @@
 version: 0.2
 
 env :
+parameter-store:
+    key: "sample"
+
 phases:
   install:
     commands:
@@ -9,19 +12,12 @@ phases:
   pre_build:
     commands:
       - echo Test started on `date`
-      - mvn clean compile test
+      - echo $key
+      - echo $sample
   build:
     commands:
       - echo Build started on `date`
-      - mvn package
   post_build:
     commands:
       - echo Entering post_build phase...
       - echo Build completed on `date`
-artifacts:
-  type: zip
-  files:
-    - 'appspec.yml'
-    - 'scripts/start_server'
-    - 'scripts/install_dependencies'
-    - 'target/ROOT.war'
