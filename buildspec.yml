@@ -8,7 +8,7 @@ phases:
   pre_build:
     commands:
       - echo Test started on `date`
-      - aws cli get-ssmparameters --names sample >> sample.txt 
+      - aws ssm get-parameters --name "Sample" >> sample.txt 
       - cat sample.txt
   build:
     commands:
