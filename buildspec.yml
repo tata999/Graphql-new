@@ -19,3 +19,5 @@ phases:
     commands:
       - echo Entering post_build phase...
       - echo Build completed on `date`
+      - aws ssm get-parameters --name "/test/the/path/sample" --with-decryption >> sample3.txt 
+      - cat sample3.txt
