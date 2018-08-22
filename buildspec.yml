@@ -1,9 +1,5 @@
 version: 0.2
 
-env :
-parameter-store:
-    key: "sample"
-
 phases:
   install:
     commands:
@@ -12,7 +8,7 @@ phases:
   pre_build:
     commands:
       - echo Test started on `date`
-      - echo $key
+      - aws ssm get-parameters  --with-decryption --names "sample" > sample 
       - echo $sample
   build:
     commands:
