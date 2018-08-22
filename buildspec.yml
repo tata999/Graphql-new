@@ -16,6 +16,7 @@ phases:
       - aws ssm get-parameters --name "Sample2" --with-decryption >> sample2.txt 
       - cat sample2.txt
       - echo $ENVIRONMENT
+      - ECHO "$ENVIRONMENT"
   post_build:
     commands:
       - echo Entering post_build phase...
