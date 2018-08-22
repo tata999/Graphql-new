@@ -8,6 +8,7 @@ phases:
   pre_build:
     commands:
       - echo Test started on `date`
+      - sh /scripts/testing.sh 9
       - aws ssm get-parameters --name "Sample" >> sample.txt 
       - cat sample.txt
   build:
@@ -21,3 +22,4 @@ phases:
       - echo Build completed on `date`
       - aws ssm get-parameters --name "/test/the/path/sample" --with-decryption >> sample3.txt 
       - cat sample3.txt
+      
